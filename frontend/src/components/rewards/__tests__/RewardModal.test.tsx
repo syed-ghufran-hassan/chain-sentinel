@@ -18,7 +18,7 @@ describe('RewardModal', () => {
   })
 
   test('renders loading and content and handles close', () => {
-    const onClose = jest.fn()
+    const onClose = vi.fn()
     render(<RewardModal isOpen={true} onClose={onClose} reward={sampleReward as any} isLoading={true} />)
 
     expect(screen.getByText(/opening/i)).toBeInTheDocument()
