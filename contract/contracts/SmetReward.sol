@@ -27,6 +27,9 @@ struct Reward {
     uint64 availableAfter;
 } 
 
+
+
+
 /**
  * @title SmetReward
  * @notice Provably-fair "loot box" reward contract using Chainlink VRF V2 Plus.
@@ -49,6 +52,9 @@ contract SmetReward is
     /** @notice Chainlink subscription id used to pay for VRF. */
     uint256 public immutable subId;
     TransactionHistory public transactionHistory;
+
+      event Opened(address indexed opener, uint256 requestId);
+
 
     // Gas-optimized constants and immutables
     /** @notice Number of confirmations VRF should wait before responding. */
